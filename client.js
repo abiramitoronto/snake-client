@@ -11,8 +11,10 @@ const connect = function () {
 
   conn.on('connect', () =>  {
     console.log("Successfully Connected to game server");
-    conn.write("Name: ABI");
-  });
+    setInterval( () => conn.write("Name: ABI"),2000);
+    setInterval( () => conn.write("Move: left"),50) ;
+    
+ });
   
   // interpret incoming data as text
   conn.setEncoding("utf8");
