@@ -2,7 +2,7 @@ const net = require("net");
 const { stdin } = require("process");
 const connect = function () {
   const conn = net.createConnection({
-    host: '192.168.47.243', // IP address here,
+    host: '192.168.2.18', // IP address here,
     port: 50541 // PORT number here,
   });
 
@@ -14,6 +14,7 @@ const connect = function () {
     console.log("Successfully Connected to game server");
     setInterval( () => conn.write("Name: ABI"),2000);
     setInterval( () => conn.write("Move: up"),500) ;
+    setInterval( () => conn.write("Say: hello"),500) ;
     
  });
   
