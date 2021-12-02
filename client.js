@@ -1,7 +1,8 @@
 const net = require("net");
+const { stdin } = require("process");
 const connect = function () {
   const conn = net.createConnection({
-    host: '165.227.47.243', // IP address here,
+    host: '192.168.47.243', // IP address here,
     port: 50541 // PORT number here,
   });
 
@@ -12,7 +13,7 @@ const connect = function () {
   conn.on('connect', () =>  {
     console.log("Successfully Connected to game server");
     setInterval( () => conn.write("Name: ABI"),2000);
-    setInterval( () => conn.write("Move: left"),50) ;
+    setInterval( () => conn.write("Move: up"),500) ;
     
  });
   
@@ -21,6 +22,7 @@ const connect = function () {
 
   return conn;
 };
+
 module.exports = {
   connect
 };
